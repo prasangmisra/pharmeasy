@@ -14,6 +14,8 @@
 			font-size: 120%;
 		}
 	</style>
+	<title>PharmEasy Project</title>
+	
 </head>
 <body>
 	
