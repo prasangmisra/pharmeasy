@@ -10,6 +10,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css?ver=20150901-1">
  <link rel="icon" type="image/png" href="app-icon.png">
 
 <style>
@@ -27,9 +34,16 @@
 <title>PharmEasy Project</title>
 </head>
 <body>
+<br>
+<br>
+<div>
+Below is the table containing information of all the movies shot in <%=request.getParameter("location") %>
+<br><br>
+
+</div>
 <div>
 <%System.out.println("You need to know about this place !! wow"); %>
-Location : <%=request.getParameter("location") %>
+
 </div>
 
 <div>
@@ -49,7 +63,9 @@ int i = 0;
 
 %> 
 
-<table style="width:100%">
+<table class="pure-table" style="width:100%">
+ <thead>
+ 
   <tr>
     <th>Title</th>
     <th>Release Year</th>		
@@ -65,7 +81,7 @@ int i = 0;
     
   </tr>
 
-
+</thead>
 <%
 
 while ((str=iofile.readLine())!=null)
@@ -118,10 +134,6 @@ String longitude = split[1];
 
 
  <script>
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -153,7 +165,7 @@ function initMap() {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
+                        'This is your location' :
                         'Error: Your browser doesn\'t support geolocation.');
 }
 
